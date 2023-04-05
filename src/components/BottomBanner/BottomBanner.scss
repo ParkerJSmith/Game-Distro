@@ -1,0 +1,9 @@
+@import "../../utilities/_variables";
+
+.bottom-banner-container {
+    height: 100px;
+    width: 100%;
+    background-color: $main-bg-color;
+    position: absolute;
+    bottom: 0;
+}

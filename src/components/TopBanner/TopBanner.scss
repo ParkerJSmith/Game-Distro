@@ -1,0 +1,55 @@
+@import "../../utilities/_variables";
+
+.top-banner-container {
+    height: 100px;
+    width: 100%;
+    background-color: $main-bg-color;
+}
+
+.top-banner-flex-container {
+    max-width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+
+.banner-logo-container {
+    height: 100%;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.banner-logo-container > img {
+    height: 90%;
+    text-align: right;
+}
+
+.banner-logo-container > img:hover {
+    cursor: pointer;
+}
+
+.link-container {
+    margin: auto;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding-right: 10px;
+}
+
+.link-container > a {
+    padding-left: 18px;
+    padding-right: 18px;
+    color: white;
+    font-family: $main-font;
+    font-size: 30px;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.link-container > a:hover {
+    color: $highlight-color;
+    transition-duration: 0.2s;
+    font-size: 35px;
+}

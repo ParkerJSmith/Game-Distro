@@ -1,0 +1,64 @@
+@import "../../utilities/_variables";
+
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background-color: $medium-color;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    display: flex;
+}
+
+.dropdown-button > img {
+    padding-left: 6px;
+    padding-top: 4px;
+    height: 8px;
+    margin: auto;
+}
+
+.in-focus {
+    background-color: $secondary-color;
+    transition-duration: 0.2s;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #262626;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content {
+    color: black;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-item {
+    margin: auto;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.dropdown-item:hover {
+    background-color: grey;
+}
+
+.dropdown-item > p {
+    color: white;
+    padding-top: 5px;
+    margin: auto;
+    cursor: default;
+    user-select: none;
+    font-family: 'Helvetica';
+}

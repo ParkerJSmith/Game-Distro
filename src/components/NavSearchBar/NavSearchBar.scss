@@ -1,0 +1,97 @@
+@import "../../utilities/_variables";
+
+.nav-search-bar-container {
+    padding-top: 28px;
+    width: 100%;
+}
+
+.nav-search-bar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 100%;
+    background-color: $medium-color;
+    border-radius: 6px;
+    box-shadow: $default-shadow;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-bar-container {
+    position: relative;
+    padding-left: 11px;
+    height: 26px;
+    width: 250px;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+
+    input {
+        position: absolute;
+        padding-left: 16px;
+        padding-right: 28px;
+        height: 26px;
+        width: 180px;
+        font-size: 18px;
+        font-family: $main-font;
+        border-radius: 14px;
+        border: none;
+        outline: none;
+    }
+
+    button {
+        position: absolute;
+        left: 207px;
+        height: 28px;
+        width: 28px;
+        border: none;
+        background-color: $secondary-color;
+        transition-duration: 0.2s;
+
+        img {
+            position: absolute;
+            -webkit-filter: invert(1);
+            filter: invert(1);
+            top: 2px;
+            left: 4px;
+            height: 20px;
+            padding-top: 2px;
+        }
+    }
+
+    button:hover {
+        background-color: $highlight-color;
+        cursor: pointer;
+        transition-duration: 0.2s;
+    }
+}
+
+.nav-search-link-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding-left: 10px;
+
+    .nav-search-link-item {
+        flex-shrink: 1;
+        flex-grow: 0;
+        width: fit-content;
+        height: 100%;
+        a {
+            padding-left: 22px;
+            padding-right: 22px;
+            color: white;
+            font-family: $main-font;
+            font-size: 20px;
+            width: fit-content;
+            text-decoration: none;
+            transition-duration: 0.2s;
+        }
+
+        a:hover {
+            color: $highlight-color;
+            transition-duration: 0.2s;
+            text-shadow: #000000DD 0px 0px 10px;
+        }
+    }
+}

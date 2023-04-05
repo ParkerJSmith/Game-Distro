@@ -1,0 +1,142 @@
+@import "../../utilities/_variables";
+
+.slideshow-container {
+    padding-top: 26px;
+    width: 100%;
+    aspect-ratio: 2.27;
+    display: flex;
+    flex-direction: row;
+}
+
+.slideshow-image {
+    position: relative;
+    width: 80%;
+
+    .slideshow-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        user-select: none;
+
+        h1 {
+            position: absolute;
+            bottom: calc(6px + 12%);
+            left: 24px;
+            color: white;
+            font-family: $main-font;
+            font-size: calc(10px + 0.5vw);
+            padding: 2px 6px 2px 6px;
+            background-color: #00000088;
+            border-radius: 5px;
+        }
+
+        button {
+            position: absolute;
+            bottom: 14px;
+            left: 24px;
+            width: 20%;
+            height: 12%;
+            font-family: $main-font;
+            font-size: calc(12px + 0.55vw);
+            background-color: white;
+            border: none;
+            outline: none;
+            color: black;
+            transition-duration: 0.2s;
+            border-radius: 6px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: $medium-color;
+            color: white;
+            transition-duration: 0.2s;
+        }
+    }
+    img {
+        width: 100%;
+        aspect-ratio: 1.78;
+        border-radius: 10px;
+        box-shadow: $default-shadow;
+    }
+}
+
+.slideshow-list-container {
+    width: 20%;
+    height: 100%;
+    padding-left: 6px;
+}
+
+.slideshow-list {
+    width: 100%;
+    height: 100%;
+    background-color: $main-bg-color;
+    box-shadow: $default-shadow;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 6px;
+    padding-bottom: 0px;
+}
+
+.slideshow-list-item-container {
+    width: 92%;
+    height: 18%;
+    margin: auto;
+    padding-bottom: 6px;
+}
+
+.slideshow-list-item {
+    background-color: $secondary-color;
+    height: 100%;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+    display: flex;
+    flex-direction: row;
+}
+
+.current-slide {
+    background-color: $medium-color;
+    transition-duration: 0.2s;
+}
+
+.slideshow-list-item:hover {
+    background-color: $medium-color;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.slideshow-list-item-image {
+    flex-basis: 33%;
+    padding-top: 2.75%;
+    padding-left: 2.75%;
+
+    img {
+        display: block;
+        max-width: 79%;
+        border-radius: 8px;
+    }
+}
+
+.slideshow-list-item-text-section {
+    position: relative;
+    flex-basis: 67%;
+    height: 100%;
+
+    .slideshow-list-item-title {
+        display: flex;
+        text-align: left;
+        width: 100%;
+        height: 100%;
+
+        h1 {
+            padding-right: 5px;
+            width: 100%;
+            margin: auto;
+            color: white;
+            font-family: $main-font;
+            font-weight: 100;
+            font-size: calc(6px + 0.55vw);
+        }
+    }
+}
