@@ -1,0 +1,166 @@
+@import "../../utilities/_variables";
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4.4;
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin carousel-arrow {
+    position: relative;
+    flex-basis: 7.5%;
+    margin: auto;
+    height: 100%;
+    transition-duration: 0.2s;
+    z-index: 100;
+
+    button {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: #00000000;
+        border-radius: 10px;
+        transition: 0.2s;
+        border: none;
+        background-color: $main-bg-color;
+        z-index: 101;
+
+        img {
+            position: absolute;
+            top: 20%;
+            max-width: 85%;
+            transition-duration: 0.2s;
+            filter: invert(44%) sepia(50%) saturate(512%) hue-rotate(130deg) brightness(93%) contrast(88%);
+        }
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: $medium-color;
+    }
+}
+
+@mixin carousel-hover {
+    button {
+        img {
+            filter: invert(80%);
+            transition-duration: 0.2s;
+        }
+    }
+}
+
+.left-carousel-arrow {
+    @include carousel-arrow;
+    margin-right: 0.5%;
+
+    .carousel-left-block {
+        position: absolute;
+        height: 160%;
+        width: 30vw;
+        top: -10%;
+        left: calc(-30vw);
+        background-color: $secondary-color;
+        z-index: 10;
+    }
+
+    button {
+        img {
+            left: 14%;
+        }
+    }
+}
+
+.left-carousel-arrow:hover {
+    @include carousel-hover;
+}
+
+.right-carousel-arrow {
+    @include carousel-arrow;
+    margin-left: 0.5%;
+
+    .carousel-right-block {
+        position: absolute;
+        height: 160%;
+        width: 30vw;
+        top: -10%;
+        left: 0;
+        background-color: $secondary-color;
+        z-index: 10;
+    }
+
+    button {
+        img {
+            right: 14%;
+        }
+    }
+}
+
+.right-carousel-arrow:hover {
+    @include carousel-hover;
+}
+
+@keyframes move-carousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-110%);
+    }
+}
+
+.carousel-games-list {
+    position: relative;
+    flex-basis: 85%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    animation: 0.5s cubic-bezier(1.0, 0.01, 0.5, 0.5) move-carousel infinite;
+
+    .carousel-games-list-item {
+        position: relative;
+        height: 100%;
+        margin: auto;
+        box-shadow: $default-shadow;
+        border-radius: 10px;
+        transition: 0.2s;
+
+        .carousel-games-list-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transition-duration: 0.2s;
+
+            h3 {
+                position: absolute;
+                bottom: -7.5%;
+                left: 5%;
+                color: #0b4e1f;
+                font-family: $main-font;
+                font-size: calc(14px + 0.6vw);
+                padding: 2px 5px 2px 5px;
+                background-color: #2ce062;
+                border-radius: 5px;
+            }
+        }
+
+        .carousel-games-list-overlay:hover {
+            background-color: #000000AA;
+            cursor: pointer;
+        } 
+
+        img {
+            max-height: 100%;
+            aspect-ratio: 0.666;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+    }
+
+    .hovered-game {
+        height: 125%;
+        cursor: pointer;
+    }
+}

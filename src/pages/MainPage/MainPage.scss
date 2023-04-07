@@ -1,0 +1,12 @@
+@import "../../utilities/_variables";
+
+.on-sale-section {
+    width: 100%;
+    h2 {
+        font-family: $main-font;
+        color: white;
+        font-size: 28px;
+        font-weight: 100;
+        padding-top: 14px;
+    }
+}

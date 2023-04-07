@@ -54,7 +54,7 @@ export default function Slideshow() {
         <div className="slideshow-list">
           {games.map((game, i) =>
             i === currentSlide ? (
-              <div className="slideshow-list-item-container">
+              <div className="slideshow-list-item-container" key={i}>
                 <div className="slideshow-list-item current-slide">
                   <div className="slideshow-list-item-image">
                     <img src={silly} alt="" />
@@ -67,7 +67,7 @@ export default function Slideshow() {
                 </div>
               </div>
             ) : (
-              <div className="slideshow-list-item-container">
+              <div className="slideshow-list-item-container" key={i}>
                 <div
                   className="slideshow-list-item"
                   onClick={setSlide.bind(null, i)}
