@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import leftArrow from "../../images/leftarrow2.png";
 import rightArrow from "../../images/rightarrow2.png";
 import test from "../../images/Minecraft_cover.png";
@@ -13,6 +13,20 @@ import test8 from "../../images/testvert8.png";
 import test9 from "../../images/testvert9.png";
 import test10 from "../../images/testvert10.png";
 import "./CarouselDisplay.scss";
+
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState([0, 0]);
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      setWindowSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+  return windowSize;
+}
 
 export default function CarouselDisplay() {
   const gamePics = [
@@ -29,8 +43,24 @@ export default function CarouselDisplay() {
     test10,
   ];
 
-  const [startIndex, setStartIndex] = React.useState(0);
-  const [hoveredGame, setHoveredGame] = React.useState(-1);
+  const [startIndex, setStartIndex] = useState(0);
+  const [hoveredGame, setHoveredGame] = useState(-1);
+
+  const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
+
+  useWindowSize();
+
+  useEffect(() => {
+    let test =
+      "calc(-30vw + " +
+      document.getElementById("left-carousel-button")!.offsetWidth +
+      ")";
+    document.getElementById("carousel-left-block")!.style.left =
+      "calc(-30vw + " +
+      document.getElementById("left-carousel-button")!.offsetWidth +
+      "px)";
+    console.log(test);
+  });
 
   function getCurrentItems() {
     let returnValue = [];
@@ -52,7 +82,14 @@ export default function CarouselDisplay() {
     }
   }
 
-  function leftArrowPress() {
+  async function leftArrowPress() {
+    document
+      .getElementById("carousel-games-list")
+      ?.classList.add("carousel-left-animation");
+    await delay(500);
+    document
+      .getElementById("carousel-games-list")
+      ?.classList.remove("carousel-left-animation");
     if (startIndex - 5 < 0) {
       setStartIndex(gamePics.length - (5 - startIndex));
     } else {
@@ -60,7 +97,14 @@ export default function CarouselDisplay() {
     }
   }
 
-  function rightArrowPress() {
+  async function rightArrowPress() {
+    document
+      .getElementById("carousel-games-list")
+      ?.classList.add("carousel-right-animation");
+    await delay(500);
+    document
+      .getElementById("carousel-games-list")
+      ?.classList.remove("carousel-right-animation");
     if (startIndex + 5 > gamePics.length - 1) {
       setStartIndex(5 - (gamePics.length - startIndex));
     } else {
@@ -69,10 +113,7 @@ export default function CarouselDisplay() {
   }
 
   function gameHover(listIndex: number) {
-    console.log("ListIndex" + listIndex);
-    console.log("Before hover: " + hoveredGame);
     setHoveredGame(listIndex);
-    console.log("After hover: " + hoveredGame);
   }
 
   function removeHover() {
@@ -82,12 +123,12 @@ export default function CarouselDisplay() {
   return (
     <div className="carousel-container">
       <div className="left-carousel-arrow">
-        <div className="carousel-left-block" />
-        <button onClick={leftArrowPress}>
+        <div className="carousel-left-block" id="carousel-left-block" />
+        <button onClick={leftArrowPress} id="left-carousel-button">
           <img src={leftArrow} alt="" />
         </button>
       </div>
-      <div className="carousel-games-list">
+      <div className="carousel-games-list" id="carousel-games-list">
         {getCurrentItems().map((game, i) =>
           hoveredGame === i ? (
             <div className="carousel-games-list-item hovered-game" key={i}>
@@ -115,7 +156,7 @@ export default function CarouselDisplay() {
         )}
       </div>
       <div className="right-carousel-arrow">
-        <div className="carousel-right-block" />
+        <div className="carousel-right-block" id="carousel-right-block" />
         <button onClick={rightArrowPress}>
           <img src={rightArrow} alt="" />
         </button>
