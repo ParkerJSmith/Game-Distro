@@ -1,12 +1,20 @@
 @import "../../utilities/_variables";
 
+h2 {
+    font-family: $main-font;
+    color: white;
+    font-size: 28px;
+    font-weight: 100;
+    padding-top: 14px;
+    margin-top: 2%;
+    margin-bottom: 0.5%;
+}
+
 .on-sale-section {
     width: 100%;
-    h2 {
-        font-family: $main-font;
-        color: white;
-        font-size: 28px;
-        font-weight: 100;
-        padding-top: 14px;
-    }
+}
+
+.coming-soon-section {
+    padding-top: 1.75%;
+    width: 100%;
 }

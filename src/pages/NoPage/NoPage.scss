@@ -1,0 +1,18 @@
+@import "../../utilities/_variables";
+
+.error-404-container {
+    h2 {
+        font-size: calc(26px + 1.3vw);
+        text-align: center;
+    }
+
+    p {
+        max-width: 20%;
+        min-width: 400px;
+        margin: auto;
+        font-family: $main-font;
+        font-size: calc(16px + 0.3vw);
+        color: #d5d5d5;
+        text-align: center;
+    }
+}

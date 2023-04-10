@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import leftArrow from "../../images/leftarrow2.png";
 import rightArrow from "../../images/rightarrow2.png";
-import test from "../../images/Minecraft_cover.png";
+import test from "../../images/testVert0.png";
 import test1 from "../../images/testvert1.png";
 import test2 from "../../images/testvert2.png";
 import test3 from "../../images/testvert3.png";
@@ -14,102 +14,123 @@ import test9 from "../../images/testvert9.png";
 import test10 from "../../images/testvert10.png";
 import "./CarouselDisplay.scss";
 
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState([0, 0]);
+class DoubleLinkedListNode {
+  value: string;
+  nextNode: DoubleLinkedListNode;
+  lastNode: DoubleLinkedListNode;
+  constructor(value: string) {
+    this.value = value;
+    this.nextNode = this;
+    this.lastNode = this;
+  }
 
-  useLayoutEffect(() => {
-    function updateSize() {
-      setWindowSize([window.innerWidth, window.innerHeight]);
-    }
-    window.addEventListener("resize", updateSize);
-    updateSize();
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
-  return windowSize;
+  getValue() {
+    return this.value;
+  }
+
+  setNext(nextNode: DoubleLinkedListNode) {
+    this.nextNode = nextNode;
+  }
+
+  getNext() {
+    return this.nextNode;
+  }
+
+  setLast(lastNode: DoubleLinkedListNode) {
+    this.lastNode = lastNode;
+  }
+
+  getLast() {
+    return this.lastNode;
+  }
 }
 
 export default function CarouselDisplay() {
-  const gamePics = [
-    test,
-    test1,
-    test2,
-    test3,
-    test4,
-    test5,
-    test6,
-    test7,
-    test8,
-    test9,
-    test10,
-  ];
-
-  const [startIndex, setStartIndex] = useState(0);
   const [hoveredGame, setHoveredGame] = useState(-1);
+  const [currentNode, setCurrentNode] = useState(
+    new DoubleLinkedListNode(test)
+  );
 
   const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
-  useWindowSize();
-
   useEffect(() => {
-    let test =
-      "calc(-30vw + " +
-      document.getElementById("left-carousel-button")!.offsetWidth +
-      ")";
-    document.getElementById("carousel-left-block")!.style.left =
-      "calc(-30vw + " +
-      document.getElementById("left-carousel-button")!.offsetWidth +
-      "px)";
-    console.log(test);
-  });
-
-  function getCurrentItems() {
-    let returnValue = [];
-    if (startIndex + 5 < gamePics.length) {
-      for (let i = 0; i < 5; i++) {
-        returnValue.push(gamePics[startIndex + i]);
-      }
-      return returnValue;
-    } else {
-      let addedItems = 0;
-      while (startIndex + addedItems < gamePics.length) {
-        returnValue.push(gamePics[startIndex + addedItems]);
-        addedItems++;
-      }
-      for (let i = 0; i < 5 - addedItems; i++) {
-        returnValue.push(gamePics[i]);
-      }
-      return returnValue;
+    function handleResize() {
+      document.getElementById("carousel-left-block")!.style.left =
+        "calc(-30vw + " +
+        document.getElementById("left-carousel-button")!.offsetWidth +
+        "px)";
     }
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    const gamePics = [
+      test,
+      test1,
+      test2,
+      test3,
+      test4,
+      test5,
+      test6,
+      test7,
+      test8,
+      test9,
+      test10,
+    ];
+    let firstNode = new DoubleLinkedListNode(gamePics[0]);
+    let lastNode = firstNode;
+    for (let i = 1; i < gamePics.length; i++) {
+      let tempNode = new DoubleLinkedListNode(gamePics[i]);
+      lastNode.setNext(tempNode);
+      tempNode.setLast(lastNode);
+      lastNode = tempNode;
+    }
+    lastNode.setNext(firstNode);
+    firstNode.setLast(lastNode);
+    setCurrentNode(firstNode);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [setCurrentNode]);
+
+  function getCurrentItems(): string[] {
+    let currentItems = [];
+    let traversedNode = currentNode;
+    for (let i = 0; i < 15; i++) {
+      currentItems.push(traversedNode.getValue());
+      traversedNode = traversedNode.getNext();
+    }
+    return currentItems;
   }
 
   async function leftArrowPress() {
     document
       .getElementById("carousel-games-list")
       ?.classList.add("carousel-left-animation");
-    await delay(500);
+    await delay(490);
     document
       .getElementById("carousel-games-list")
       ?.classList.remove("carousel-left-animation");
-    if (startIndex - 5 < 0) {
-      setStartIndex(gamePics.length - (5 - startIndex));
-    } else {
-      setStartIndex(startIndex - 5);
+    let traversedNode = currentNode;
+    for (let i = 0; i < 6; i++) {
+      traversedNode = traversedNode.getLast();
     }
+    setCurrentNode(traversedNode);
   }
 
   async function rightArrowPress() {
     document
       .getElementById("carousel-games-list")
       ?.classList.add("carousel-right-animation");
-    await delay(500);
+    await delay(490);
     document
       .getElementById("carousel-games-list")
       ?.classList.remove("carousel-right-animation");
-    if (startIndex + 5 > gamePics.length - 1) {
-      setStartIndex(5 - (gamePics.length - startIndex));
-    } else {
-      setStartIndex(startIndex + 5);
+    let traversedNode = currentNode;
+    for (let i = 0; i < 6; i++) {
+      traversedNode = traversedNode.getNext();
     }
+    setCurrentNode(traversedNode);
   }
 
   function gameHover(listIndex: number) {
@@ -128,8 +149,15 @@ export default function CarouselDisplay() {
           <img src={leftArrow} alt="" />
         </button>
       </div>
+      <div className="carousel-games-area" id="carousel-games-area"></div>
+      <div className="right-carousel-arrow">
+        <div className="carousel-right-block" id="carousel-right-block" />
+        <button onClick={rightArrowPress}>
+          <img src={rightArrow} alt="" />
+        </button>
+      </div>
       <div className="carousel-games-list" id="carousel-games-list">
-        {getCurrentItems().map((game, i) =>
+        {getCurrentItems().map((game: string, i: number) =>
           hoveredGame === i ? (
             <div className="carousel-games-list-item hovered-game" key={i}>
               <div
@@ -154,12 +182,6 @@ export default function CarouselDisplay() {
             </div>
           )
         )}
-      </div>
-      <div className="right-carousel-arrow">
-        <div className="carousel-right-block" id="carousel-right-block" />
-        <button onClick={rightArrowPress}>
-          <img src={rightArrow} alt="" />
-        </button>
       </div>
     </div>
   );
