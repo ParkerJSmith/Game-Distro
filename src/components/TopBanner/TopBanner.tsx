@@ -2,8 +2,32 @@ import React from "react";
 import "./TopBanner.scss";
 import logo from "../../images/logo_white.svg";
 import DropMenu from "../DropMenu/DropMenu";
+import languages from "../../languages/languages.json";
 
-export default function TopBanner() {
+export default function TopBanner(props: {
+  languageSelect: any;
+  language: string;
+}) {
+  const store =
+    props.language === "English"
+      ? languages.English.store
+      : languages.日本語.store;
+
+  const about =
+    props.language === "English"
+      ? languages.English.about
+      : languages.日本語.about;
+
+  const support =
+    props.language === "English"
+      ? languages.English.support
+      : languages.日本語.support;
+
+  const languageDropdownName =
+    props.language === "English"
+      ? languages.English.languages
+      : languages.日本語.languages;
+
   return (
     <div className="top-banner-container">
       <div className="top-banner-flex-container">
@@ -11,11 +35,15 @@ export default function TopBanner() {
           <img src={logo} alt="" />
         </div>
         <div className="link-container">
-          <a href="store">STORE</a>
-          <a href="about">ABOUT</a>
-          <a href="support">SUPPORT</a>
+          <a href="store">{store}</a>
+          <a href="about">{about}</a>
+          <a href="support">{support}</a>
         </div>
-        <DropMenu name='Languages' options={["English", "日本語"]}/>
+        <DropMenu
+          name={languageDropdownName}
+          options={["English", "日本語"]}
+          setOptionFunction={props.languageSelect}
+        />
       </div>
     </div>
   );

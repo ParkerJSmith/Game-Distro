@@ -1,0 +1,28 @@
+{
+    "English": {
+        "store": "STORE",
+        "about": "ABOUT",
+        "support": "SUPPORT",
+        "languages": "languages",
+        "home": "Home",
+        "new": "New",
+        "topSellers": "Top Sellers",
+        "search": "Search",
+        "onSale": "On Sale",
+        "comingSoon": "Coming Soon",
+        "buy": "BUY NOW"
+    },
+    "日本語": {
+        "store": "ストア",
+        "about": "サイトとは",
+        "support": "サポート",
+        "languages": "言語",
+        "home": "ホーム",
+        "new": "最新",
+        "topSellers": "売上上位",
+        "search": "検察",
+        "onSale": "安売り",
+        "comingSoon": "近日登場",
+        "buy": "今すぐ購入"
+    }
+}

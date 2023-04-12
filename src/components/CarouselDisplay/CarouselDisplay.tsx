@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import leftArrow from "../../images/leftarrow2.png";
 import rightArrow from "../../images/rightarrow2.png";
-import test from "../../images/testVert0.png";
-import test1 from "../../images/testvert1.png";
-import test2 from "../../images/testvert2.png";
+import test from "../../images/baby_parker_clicker_vert.png";
+import test1 from "../../images/tactical_shooter-engine_vert.png";
+import test2 from "../../images/revenge_of_geospace_vert.png";
 import test3 from "../../images/testvert3.png";
 import test4 from "../../images/testvert4.png";
 import test5 from "../../images/testvert5.png";
@@ -22,26 +22,6 @@ class DoubleLinkedListNode {
     this.value = value;
     this.nextNode = this;
     this.lastNode = this;
-  }
-
-  getValue() {
-    return this.value;
-  }
-
-  setNext(nextNode: DoubleLinkedListNode) {
-    this.nextNode = nextNode;
-  }
-
-  getNext() {
-    return this.nextNode;
-  }
-
-  setLast(lastNode: DoubleLinkedListNode) {
-    this.lastNode = lastNode;
-  }
-
-  getLast() {
-    return this.lastNode;
   }
 }
 
@@ -80,12 +60,16 @@ export default function CarouselDisplay() {
     let lastNode = firstNode;
     for (let i = 1; i < gamePics.length; i++) {
       let tempNode = new DoubleLinkedListNode(gamePics[i]);
-      lastNode.setNext(tempNode);
-      tempNode.setLast(lastNode);
+      lastNode.nextNode = tempNode;
+      tempNode.lastNode = lastNode;
       lastNode = tempNode;
     }
-    lastNode.setNext(firstNode);
-    firstNode.setLast(lastNode);
+    lastNode.nextNode = firstNode;
+    firstNode.lastNode = lastNode;
+
+    for (let i = 0; i < 5; i++) {
+      firstNode = firstNode.lastNode;
+    }
     setCurrentNode(firstNode);
 
     return () => {
@@ -97,8 +81,8 @@ export default function CarouselDisplay() {
     let currentItems = [];
     let traversedNode = currentNode;
     for (let i = 0; i < 15; i++) {
-      currentItems.push(traversedNode.getValue());
-      traversedNode = traversedNode.getNext();
+      currentItems.push(traversedNode.value);
+      traversedNode = traversedNode.nextNode;
     }
     return currentItems;
   }
@@ -113,7 +97,7 @@ export default function CarouselDisplay() {
       ?.classList.remove("carousel-left-animation");
     let traversedNode = currentNode;
     for (let i = 0; i < 6; i++) {
-      traversedNode = traversedNode.getLast();
+      traversedNode = traversedNode.lastNode;
     }
     setCurrentNode(traversedNode);
   }
@@ -128,7 +112,7 @@ export default function CarouselDisplay() {
       ?.classList.remove("carousel-right-animation");
     let traversedNode = currentNode;
     for (let i = 0; i < 6; i++) {
-      traversedNode = traversedNode.getNext();
+      traversedNode = traversedNode.nextNode;
     }
     setCurrentNode(traversedNode);
   }
