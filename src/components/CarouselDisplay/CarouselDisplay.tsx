@@ -4,14 +4,14 @@ import rightArrow from "../../images/rightarrow2.png";
 import test from "../../images/baby_parker_clicker_vert.png";
 import test1 from "../../images/tactical_shooter-engine_vert.png";
 import test2 from "../../images/revenge_of_geospace_vert.png";
-import test3 from "../../images/testvert3.png";
-import test4 from "../../images/testvert4.png";
-import test5 from "../../images/testvert5.png";
-import test6 from "../../images/testvert6.png";
-import test7 from "../../images/testvert7.png";
-import test8 from "../../images/testvert8.png";
-import test9 from "../../images/testvert9.png";
-import test10 from "../../images/testvert10.png";
+import test3 from "../../images/mortal_betrayal_vert.png";
+import test4 from "../../images/baby_parker_clicker_vert.png";
+import test5 from "../../images/tactical_shooter-engine_vert.png";
+import test6 from "../../images/revenge_of_geospace.png";
+import test7 from "../../images/mortal_betrayal_vert.png";
+import test8 from "../../images/baby_parker_clicker_vert.png";
+import test9 from "../../images/tactical_shooter-engine_vert.png";
+import test10 from "../../images/revenge_of_geospace_vert.png";
 import "./CarouselDisplay.scss";
 
 class DoubleLinkedListNode {
@@ -41,8 +41,8 @@ export default function CarouselDisplay() {
         "px)";
     }
     handleResize();
+    window.addEventListener("resize", handleResize);
 
-    window.addEventListener('resize', handleResize);
     const gamePics = [
       test,
       test1,
@@ -73,9 +73,9 @@ export default function CarouselDisplay() {
     setCurrentNode(firstNode);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
-  }, [setCurrentNode]);
+  }, []);
 
   function getCurrentItems(): string[] {
     let currentItems = [];

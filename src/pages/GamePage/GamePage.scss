@@ -3,7 +3,7 @@
 @mixin game-page-button {
     margin-top: 2.5%;
     font-family: $main-font;
-    font-size: calc(20px + 0.75vw);
+    font-size: calc(10px + min(1.0vw, 40px));
     background-color: white;
     border: none;
     outline: none;
@@ -13,22 +13,22 @@
     box-shadow: $default-shadow;
 }
 
-.game-info-container {
+.game-video-purchase-container {
     display: flex;
     flex-direction: row;
     width: 100%;
 
     video {
-        width: 70%;
+        width: 75%;
         aspect-ratio: 1.7778;
         background-color: black;
         border-radius: 10px;
         box-shadow: $default-shadow;
     }
 
-    .game-description {
+    .game-purchase-container {
         position: relative;
-        flex-basis: 30%;
+        flex-basis: 25%;
         background-color: $main-bg-color;
         font-family: $main-font;
         color: white;
@@ -42,13 +42,13 @@
         display: flex;
         flex-direction: column;
 
-        .game-description-image {
+        .game-purchase-image {
             margin-top: 3.75%;
             width: 100%;
             border-radius: 10px;
         }
 
-        .game-description-buttons {
+        .game-purchase-buttons {
             flex-grow: 1;
             width: 99%;
             display: flex;
@@ -67,14 +67,13 @@
                 transition-duration: 0.2s;
             }
 
-            .game-description-buy-button {
+            .game-purchase-buy-button {
                 flex-basis: 45%;
-                //background-color: #2ce062;
             }
 
-            .game-description-sub-buttons {
+            .game-purchase-sub-buttons {
                 flex-basis: 22.5%;
-                font-size: calc(10px + 0.6vw);
+                font-size: calc(8px + min(0.6vw, 20px));
                 background-color: $secondary-color;
                 color: $grey-text-color;
             }
@@ -82,7 +81,7 @@
     }
 }
 
-.game-description-icon-container {
+.game-purchase-icon-container {
     position: relative;
     margin-top: 2%;
     flex-basis: 6%;
@@ -90,16 +89,20 @@
     flex-direction: row;
     white-space: nowrap;
     overflow: hidden;
+    filter: invert(0.2);
 }
 
 .thumb-icon-container {
     position: relative;
     width: 11%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .thumbs-up-icon {
         position: absolute;
-        height: 100%;
+        height: 85%;
     }
 }
 
@@ -108,16 +111,101 @@
     height: 100%;
     display: flex;
     align-items: center;
+
+    span {
+        padding-top: 1.5%;
+        padding-left: 3.5%;
+        font-size: calc(5px + min(0.65vw, 14px));
+    }
 }
 
-.windows-icon-container {
+.os-icon-container {
     position: relative;
     width: 11%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .windows-icon {
+    .os-icon {
         position: absolute;
-        height: 100%;
+        height: 85%;
         right: 4px;
+    }
+}
+
+.game-purchase-info-container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5.5%;
+    margin-bottom: 5.5%;
+    filter: invert(0.2);
+
+    .info-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        h4 {
+            font-size: calc(9px + 0.4vw);
+            font-weight: 100;
+            margin-top: 0.5%;
+            margin-bottom: 0.5%;
+        }
+
+        .info-descriptor {
+            flex-basis: 50%;
+        }
+
+        .info-information {
+            flex-basis: 50%;
+            text-align: right;
+            padding-right: 4px;
+        }
+    }
+}
+
+.game-description-container {
+    width: 75%;
+    background-color: $main-bg-color;
+    border-radius: 10px;
+    box-shadow: $default-shadow;
+    margin-top: 2.5%;
+    padding: 1px;
+
+    p {
+        margin: 2.5%;
+    }
+}
+
+.system-requirements-container {
+    width: 75%;
+    background-color: $main-bg-color;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    box-shadow: $default-shadow;
+    margin-top: 1.25%;
+
+    .requirements-item {
+        flex-basis: 50%;
+        margin-left: 2.5%;
+        display: flex;
+        flex-direction: column;
+
+        .requirement-listing {
+            padding-bottom: 5.5%;
+
+            .requirement-category {
+                margin: 0;
+                color: $grey-text-color;
+            }
+
+            .requirement-fulfiller {
+                margin: 0;
+            }
+        }
     }
 }

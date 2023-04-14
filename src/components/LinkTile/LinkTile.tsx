@@ -1,5 +1,5 @@
 import React from "react";
-import test from "../../images/test.jpg";
+import test from "../../images/baby_parker_clicker.png";
 
 export default function LinkTile(props: { link: string }) {
   return (

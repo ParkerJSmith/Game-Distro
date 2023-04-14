@@ -35,9 +35,9 @@ export default function TopBanner(props: {
           <img src={logo} alt="" />
         </div>
         <div className="link-container">
-          <a href="store">{store}</a>
-          <a href="about">{about}</a>
-          <a href="support">{support}</a>
+          <a href="/store">{store}</a>
+          <a href="/about">{about}</a>
+          <a href="/support">{support}</a>
         </div>
         <DropMenu
           name={languageDropdownName}
