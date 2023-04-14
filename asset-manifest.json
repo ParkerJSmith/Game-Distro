@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Game-Distro/static/css/main.adcab85a.css",
+    "main.js": "/Game-Distro/static/js/main.dee9618a.js",
+    "static/media/pbjt.mp4": "/Game-Distro/static/media/pbjt.8182b3ab837e3e597dae.mp4",
+    "static/media/mortal_betrayal3.png": "/Game-Distro/static/media/mortal_betrayal3.592ab2e334a97eef13c5.png",
+    "static/media/revenge_of_geospace.png": "/Game-Distro/static/media/revenge_of_geospace.86263b4c9eda30f7b0f2.png",
+    "static/media/mortal_betrayal_vert.png": "/Game-Distro/static/media/mortal_betrayal_vert.e4d3620edcdb2a02bc2b.png",
+    "static/media/baby_parker_clicker.png": "/Game-Distro/static/media/baby_parker_clicker.603509b2af6495bfb678.png",
+    "static/media/revenge_of_geospace_vert.png": "/Game-Distro/static/media/revenge_of_geospace_vert.a94e3d6229ba4bf7076d.png",
+    "static/media/baby_parker_clicker_vert.png": "/Game-Distro/static/media/baby_parker_clicker_vert.9125c172cfb22247cafe.png",
+    "static/media/tactical_shooter-engine.png": "/Game-Distro/static/media/tactical_shooter-engine.743effdd70abef42ef79.png",
+    "static/media/tactical_shooter-engine_vert.png": "/Game-Distro/static/media/tactical_shooter-engine_vert.d4d9ac8e528e67ad85ca.png",
+    "static/media/leftarrow2.png": "/Game-Distro/static/media/leftarrow2.7b690fbb7f7129e6590a.png",
+    "static/media/rightarrow2.png": "/Game-Distro/static/media/rightarrow2.e597b1f3dc386897cd86.png",
+    "static/media/logo_white.svg": "/Game-Distro/static/media/logo_white.fa10c209d22e0eddf8fce0812888609a.svg",
+    "static/media/search-icon.svg": "/Game-Distro/static/media/search-icon.dcc917b4aaedba50220f7e8a520b49a2.svg",
+    "index.html": "/Game-Distro/index.html",
+    "main.adcab85a.css.map": "/Game-Distro/static/css/main.adcab85a.css.map",
+    "main.dee9618a.js.map": "/Game-Distro/static/js/main.dee9618a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.adcab85a.css",
+    "static/js/main.dee9618a.js"
+  ]
+}
