@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Game-Distro/static/css/main.adcab85a.css",
-    "main.js": "/Game-Distro/static/js/main.a0a3e184.js",
+    "main.js": "/Game-Distro/static/js/main.f6f7f156.js",
     "static/media/pbjt.mp4": "/Game-Distro/static/media/pbjt.8182b3ab837e3e597dae.mp4",
     "static/media/mortal_betrayal3.png": "/Game-Distro/static/media/mortal_betrayal3.592ab2e334a97eef13c5.png",
     "static/media/revenge_of_geospace.png": "/Game-Distro/static/media/revenge_of_geospace.86263b4c9eda30f7b0f2.png",
@@ -17,10 +17,10 @@
     "static/media/search-icon.svg": "/Game-Distro/static/media/search-icon.dcc917b4aaedba50220f7e8a520b49a2.svg",
     "index.html": "/Game-Distro/index.html",
     "main.adcab85a.css.map": "/Game-Distro/static/css/main.adcab85a.css.map",
-    "main.a0a3e184.js.map": "/Game-Distro/static/js/main.a0a3e184.js.map"
+    "main.f6f7f156.js.map": "/Game-Distro/static/js/main.f6f7f156.js.map"
   },
   "entrypoints": [
     "static/css/main.adcab85a.css",
-    "static/js/main.a0a3e184.js"
+    "static/js/main.f6f7f156.js"
   ]
 }
