@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div>
       <TopBanner languageSelect={setLanguage} language={language} />
-      <BrowserRouter>
+      <BrowserRouter basename="/Game-Distro">
         <Routes>
           <Route path="/" element={<Navigate to="store" />} />
           <Route path="store" element={<MainPage language={language} />} />
