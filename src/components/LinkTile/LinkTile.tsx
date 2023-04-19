@@ -1,11 +1,11 @@
 import React from "react";
-import test from "../../images/baby_parker_clicker.png";
+import { getGameFullImage } from "api";
 
 export default function LinkTile(props: { link: string }) {
   return (
     <a className="link-tile-container" href={props.link}>
       <div className="link-tile-img-section">
-        <img src={test} alt="" />
+        <img src={getGameFullImage(0)} alt="" />
       </div>
       <div className="link-tile-text-section">
         <h3>Game Title</h3>

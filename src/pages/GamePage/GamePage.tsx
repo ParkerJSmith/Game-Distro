@@ -2,9 +2,9 @@ import React from "react";
 import NavSearchBar from "../../components/NavSearchBar/NavSearchBar";
 import "./GamePage.scss";
 import video from "../../videos/pbjt.mp4";
-import test from "../../images/tactical_shooter_engine.png";
-import windowsLogo from "../../images/windowslogo.png";
-import thumbsUp from "../../images/thumbs_up_icon.png";
+import windowsLogo from "images/windowslogo.png";
+import thumbsUp from "images/thumbs_up_icon.png";
+import { getGameFullImage } from "api";
 
 export default function GamePage(props: { language: string }) {
   return (
@@ -14,7 +14,7 @@ export default function GamePage(props: { language: string }) {
       <div className="game-video-purchase-container">
         <video src={video} controls />
         <div className="game-purchase-container">
-          <img src={test} alt="game" className="game-purchase-image" />
+          <img src={getGameFullImage(0)} alt="game" className="game-purchase-image" />
           <div className="game-purchase-icon-container">
             <div className="thumb-icon-container">
               <img src={thumbsUp} className="thumbs-up-icon" alt="game" />
