@@ -2,7 +2,7 @@ import React from "react";
 import NavSearchBar from "../../components/NavSearchBar/NavSearchBar";
 import "./GamePage.scss";
 import video from "../../videos/pbjt.mp4";
-import test from "../../images/tactical_shooter-engine.png";
+import test from "../../images/tactical_shooter_engine.png";
 import windowsLogo from "../../images/windowslogo.png";
 import thumbsUp from "../../images/thumbs_up_icon.png";
 

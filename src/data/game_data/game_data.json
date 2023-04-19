@@ -1,0 +1,162 @@
+[
+    {
+        "id": 0,
+        "titleEn": "Baby Parker Clicker",
+        "titleJp": "ベイビー・パーカー・クリッカー",
+        "fullImage": "images/baby_parker_clicker.png",
+        "verticalImage": "images/baby_parker_clicker_vert.png",
+        "price": "Free to Play",
+        "discount": "100",
+        "description": "This is a description of the game!",
+        "reviews": "99% Positive Reviews",
+        "developer": "Parker Smith",
+        "publisher": "Parker Smith",
+        "releaseDate": "30/10/22",
+        "systemRequirements": {
+            "minimum": {
+                "os": "Windows 10",
+                "processor": "Intel Core i5-7500 or AMD Ryzen 5 1600",
+                "memory": "4 GB RAM",
+                "storage": "5GB",
+                "graphicsApi": "OpenGL",
+                "graphics": "NVIDIA GeForce GTX 1030 or AMD Radeon RX 570"
+            },
+            "recommended": {
+                "os": "Windows 10",
+                "processor": "Intel Core i7-10700 or AMD Ryzen 5 5600",
+                "memory": "4 GB RAM",
+                "storage": "5GB (SSD Recommended)",
+                "graphicsApi": "OpenGL",
+                "graphics": "NVIDIA GeForce GTX 1060 or AMD Radeon RX 590"
+            }
+        }
+    },
+    {
+        "id": 1,
+        "titleEn": "Tactical Shooter Engine",
+        "titleJp": "タクティクル・シューター・エンジン",
+        "fullImage": "images/tactical_shooter_engine.png",
+        "verticalImage": "images/tactical_shooter_engine_vert.png",
+        "price": "CAD $79.99",
+        "discount": "50",
+        "description": "Tactical Shooter Engine is an OpenGL-based first-person game engine written in C++ and developed by Parker Smith. The engine currently implements many features essential to the tactical shooter genre such as gravity and collision physics, hitscan collision detection, weapon dropping/picking up, and bombsites/bomb planting to name a few. From a graphical standpoint the engine also implements the ability to add post-processing effects such as anti-aliasing. The engine is currently a work-in-progress-on-indefinite-hold.",
+        "reviews": "99% Positive Reviews",
+        "developer": "Parker Smith",
+        "publisher": "Parker Smith",
+        "releaseDate": "30/10/22",
+        "systemRequirements": {
+            "minimum": {
+                "os": "Windows 10",
+                "processor": "Intel Core i5-7500 or AMD Ryzen 5 1600",
+                "memory": "4 GB RAM",
+                "storage": "5GB",
+                "graphicsApi": "OpenGL",
+                "graphics": "NVIDIA GeForce GTX 1030 or AMD Radeon RX 570"
+            },
+            "recommended": {
+                "os": "Windows 10",
+                "processor": "Intel Core i7-10700 or AMD Ryzen 5 5600",
+                "memory": "4 GB RAM",
+                "storage": "5GB (SSD Recommended)",
+                "graphicsApi": "OpenGL",
+                "graphics": "NVIDIA GeForce GTX 1060 or AMD Radeon RX 590"
+            }
+        }
+    },
+    {
+        "id": 2,
+        "titleEn": "Revenge of Geospace",
+        "titleJp": "ジオスペースの復讐",
+        "fullImage": "images/revenge_of_geospace.png",
+        "verticalImage": "images/revenge_of_geospace_vert.png",
+        "price": "CAD $29.99",
+        "discount": "20",
+        "description": "This is a description of the game!",
+        "reviews": "99% Positive Reviews",
+        "developer": "Parker Smith",
+        "publisher": "Parker Smith",
+        "releaseDate": "30/10/22",
+        "systemRequirements": {
+            "minimum": {
+                "os": "Windows 10",
+                "processor": "Intel Core i5-7500 or AMD Ryzen 5 1600",
+                "memory": "4 GB RAM",
+                "storage": "5GB",
+                "graphicsApi": "OpenGL",
+                "graphics": "NVIDIA GeForce GTX 1030 or AMD Radeon RX 570"
+            },
+            "recommended": {
+                "os": "Windows 10",
+                "processor": "Intel Core i7-10700 or AMD Ryzen 5 5600",
+                "memory": "4 GB RAM",
+                "storage": "5GB (SSD Recommended)",
+                "graphicsApi": "OpenGL",
+                "graphics": "NVIDIA GeForce GTX 1060 or AMD Radeon RX 590"
+            }
+        }
+    },
+    {
+        "id": 3,
+        "titleEn": "Mortal Betrayal",
+        "titleJp": "必滅の裏切り",
+        "fullImage": "images/mortal_betrayal3.png",
+        "verticalImage": "images/mortal_betrayal_vert.png",
+        "price": "CAD $19.99",
+        "discount": "30",
+        "description": "This is a description of the game!",
+        "reviews": "99% Positive Reviews",
+        "developer": "Parker Smith",
+        "publisher": "Parker Smith",
+        "releaseDate": "30/10/22",
+        "systemRequirements": {
+            "minimum": {
+                "os": "Windows 10",
+                "processor": "Intel Core i5-7500 or AMD Ryzen 5 1600",
+                "memory": "4 GB RAM",
+                "storage": "5GB",
+                "graphicsApi": "OpenGL",
+                "graphics": "NVIDIA GeForce GTX 1030 or AMD Radeon RX 570"
+            },
+            "recommended": {
+                "os": "Windows 10",
+                "processor": "Intel Core i7-10700 or AMD Ryzen 5 5600",
+                "memory": "4 GB RAM",
+                "storage": "5GB (SSD Recommended)",
+                "graphicsApi": "OpenGL",
+                "graphics": "NVIDIA GeForce GTX 1060 or AMD Radeon RX 590"
+            }
+        }
+    },
+    {
+        "id": 4,
+        "titleEn": "Harvest Acres",
+        "titleJp": "収穫のエーカーズ",
+        "fullImage": "images/harvest_acres.png",
+        "verticalImage": "images/harvest_acres_vert.png",
+        "price": "CAD $24.99",
+        "discount": "15",
+        "description": "This is a description of the game!",
+        "reviews": "99% Positive Reviews",
+        "developer": "Parker Smith",
+        "publisher": "Parker Smith",
+        "releaseDate": "30/10/22",
+        "systemRequirements": {
+            "minimum": {
+                "os": "Windows 10",
+                "processor": "Intel Core i5-7500 or AMD Ryzen 5 1600",
+                "memory": "4 GB RAM",
+                "storage": "5GB",
+                "graphicsApi": "OpenGL",
+                "graphics": "NVIDIA GeForce GTX 1030 or AMD Radeon RX 570"
+            },
+            "recommended": {
+                "os": "Windows 10",
+                "processor": "Intel Core i7-10700 or AMD Ryzen 5 5600",
+                "memory": "4 GB RAM",
+                "storage": "5GB (SSD Recommended)",
+                "graphicsApi": "OpenGL",
+                "graphics": "NVIDIA GeForce GTX 1060 or AMD Radeon RX 590"
+            }
+        }
+    }
+]

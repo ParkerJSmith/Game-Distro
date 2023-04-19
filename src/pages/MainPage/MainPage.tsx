@@ -4,7 +4,7 @@ import Slideshow from "../../components/Slideshow/Slideshow";
 import CarouselDisplay from "../../components/CarouselDisplay/CarouselDisplay";
 import TileRow from "../../components/LinkTile/TileRow";
 import "./MainPage.scss";
-import languages from "../../languages/languages.json";
+import languages from "../../data/languages/languages.json";
 
 export default function MainPage(props: { language: string }) {
   const onSale =
@@ -17,7 +17,7 @@ export default function MainPage(props: { language: string }) {
       ? languages.English.comingSoon
       : languages.日本語.comingSoon;
   return (
-    <div className="content-container">
+    <div className="content-container" id="content-container">
       <NavSearchBar language={props.language} />
       <Slideshow language={props.language}/>
       <div className="on-sale-section">

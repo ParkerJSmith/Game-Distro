@@ -2,7 +2,7 @@ import React from "react";
 import "./TopBanner.scss";
 import logo from "../../images/logo_white.svg";
 import DropMenu from "../DropMenu/DropMenu";
-import languages from "../../languages/languages.json";
+import languages from "../../data/languages/languages.json";
 
 export default function TopBanner(props: {
   languageSelect: any;
@@ -32,7 +32,9 @@ export default function TopBanner(props: {
     <div className="top-banner-container">
       <div className="top-banner-flex-container">
         <div className="banner-logo-container">
-          <img src={logo} alt="" />
+          <a href="/Game-Distro/store">
+            <img src={logo} alt="" />
+          </a>
         </div>
         <div className="link-container">
           <a href="/Game-Distro/store">{store}</a>

@@ -1,53 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import test from "../../images/baby_parker_clicker.png";
-import test1 from "../../images/tactical_shooter-engine.png";
-import test2 from "../../images/revenge_of_geospace.png";
-import test3 from "../../images/mortal_betrayal3.png";
-import testVert from "../../images/baby_parker_clicker_vert.png";
-import testVert1 from "../../images/tactical_shooter-engine_vert.png";
-import testVert2 from "../../images/revenge_of_geospace_vert.png";
-import testVert3 from "../../images/mortal_betrayal_vert.png";
+import { getGameFullImages, getGameVerticalImages, getGameTitlesEnglish, getGameTitlesJapanese, getGamePrice } from "../../api";
 import "./Slideshow.scss";
-import languages from "../../languages/languages.json";
+import languages from "../../data/languages/languages.json";
 
 export default function Slideshow(props: { language: string }) {
   const buy =
     props.language === "English" ? languages.English.buy : languages.日本語.buy;
 
-  const games =
-    props.language === "English"
-      ? [
-          "Baby Parker Clicker",
-          "Tactical Shooter Engine",
-          "Revenge of Geospace",
-          "Mortal Betrayal",
-          "missingno",
-        ]
-      : [
-          "ベイビー・パーカー・クリッカー",
-          "タクティクル・シューター・エンジン",
-          "ジオスペースの復讐",
-          "必滅の裏切り",
-          "missingno",
-        ];
-  const gamePics = [test, test1, test2, test3, test];
-  const gameVertPics = [testVert, testVert1, testVert2, testVert3, testVert];
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const gamePics = useMemo(() => {
+    return getGameFullImages();
+  }, []);
 
-  function setSlide(slideNumber: number) {
-    if (slideNumber > games.length - 1) {
-      return;
-    }
-    setCurrentSlide(slideNumber);
-  }
+  const gameVertPics = useMemo(() => {
+    return getGameVerticalImages();
+  }, []);
 
-  let navigate = useNavigate();
-  const slideClicked = () => {
-    let path = `/game`;
-    navigate(path);
-  };
+  const gameTitles = useMemo(() => {
+    return props.language === "English"
+    ? getGameTitlesEnglish()
+    : getGameTitlesJapanese();
+  }, [props.language]);
 
   useEffect(() => {
     function nextSlide() {
@@ -64,18 +39,31 @@ export default function Slideshow(props: { language: string }) {
     };
   }, [currentSlide, gamePics.length]);
 
+  function setSlide(slideNumber: number) {
+    if (slideNumber > gameTitles.length - 1) {
+      return;
+    }
+    setCurrentSlide(slideNumber);
+  }
+
+  let navigate = useNavigate();
+  const slideClicked = () => {
+    let path = `/game`;
+    navigate(path);
+  };
+
   return (
     <div className="slideshow-container">
       <div className="slideshow-image">
         <div className="slideshow-overlay" onClick={slideClicked}>
-          <h1>CAD $69.99</h1>
+          <h1>{getGamePrice(currentSlide)}</h1>
           <button>{buy}</button>
         </div>
         <img src={gamePics[currentSlide]} alt="game" />
       </div>
       <div className="slideshow-list-container">
         <div className="slideshow-list">
-          {games.map((game, i) =>
+          {gameTitles.map((game, i) =>
             i === currentSlide ? (
               <div className="slideshow-list-item-container" key={i}>
                 <div className="slideshow-list-item current-slide">

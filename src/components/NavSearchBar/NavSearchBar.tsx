@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import searchIcon from "../../images/search-icon.svg";
+import searchIcon from "../../images/search_icon.svg";
 import "./NavSearchBar.scss";
-import languages from "../../languages/languages.json";
+import languages from "../../data/languages/languages.json";
 
 export default function NavSearchBar(props: { language: string }) {
   const [searchText, setSearchText] = useState("");
