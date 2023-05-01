@@ -18,12 +18,14 @@
     flex-direction: row;
     width: 100%;
 
-    video {
-        width: 75%;
+    Iframe {
+        width: 85%;
         aspect-ratio: 1.7778;
         background-color: black;
         border-radius: 10px;
         box-shadow: $default-shadow;
+        outline: none;
+        border: none;
     }
 
     .game-purchase-container {

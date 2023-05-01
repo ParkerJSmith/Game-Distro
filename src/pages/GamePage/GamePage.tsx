@@ -12,9 +12,9 @@ export default function GamePage(props: { language: string }) {
       <NavSearchBar language={props.language} />
       <h1>Tactical Shooter Engine</h1>
       <div className="game-video-purchase-container">
-        <video src={video} controls />
+      <iframe src="https://www.youtube.com/embed/9CUDQ_b6r0Y" title="YouTube video player" allow="accelerometer; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
         <div className="game-purchase-container">
-          <img src={getGameFullImage(0)} alt="game" className="game-purchase-image" />
+          <img src={getGameFullImage(1)} alt="game" className="game-purchase-image" />
           <div className="game-purchase-icon-container">
             <div className="thumb-icon-container">
               <img src={thumbsUp} className="thumbs-up-icon" alt="game" />
