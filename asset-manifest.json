@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Game-Distro/static/css/main.308b394f.css",
-    "main.js": "/Game-Distro/static/js/main.b193f07e.js",
+    "main.js": "/Game-Distro/static/js/main.c3335bbf.js",
     "static/media/leftarrow2.png": "/Game-Distro/static/media/leftarrow2.7b690fbb7f7129e6590a.png",
     "static/media/rightarrow2.png": "/Game-Distro/static/media/rightarrow2.e597b1f3dc386897cd86.png",
     "static/media/logo_white.svg": "/Game-Distro/static/media/logo_white.fa10c209d22e0eddf8fce0812888609a.svg",
     "static/media/search_icon.svg": "/Game-Distro/static/media/search_icon.dcc917b4aaedba50220f7e8a520b49a2.svg",
     "index.html": "/Game-Distro/index.html",
     "main.308b394f.css.map": "/Game-Distro/static/css/main.308b394f.css.map",
-    "main.b193f07e.js.map": "/Game-Distro/static/js/main.b193f07e.js.map"
+    "main.c3335bbf.js.map": "/Game-Distro/static/js/main.c3335bbf.js.map"
   },
   "entrypoints": [
     "static/css/main.308b394f.css",
-    "static/js/main.b193f07e.js"
+    "static/js/main.c3335bbf.js"
   ]
 }
