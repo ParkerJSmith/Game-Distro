@@ -79,7 +79,7 @@ export default function GamePage(props: { language: string }) {
             <h3 className="requirement-fulfiller">4 GB RAM</h3>
           </div>
           <div className="requirement-listing">
-            <h3 className="requirement-category">Storeage</h3>
+            <h3 className="requirement-category">Storage</h3>
             <h3 className="requirement-fulfiller">5GB</h3>
           </div>
           <div className="requirement-listing">
@@ -110,7 +110,7 @@ export default function GamePage(props: { language: string }) {
             <h3 className="requirement-fulfiller">4 GB RAM</h3>
           </div>
           <div className="requirement-listing">
-            <h3 className="requirement-category">Storeage</h3>
+            <h3 className="requirement-category">Storage</h3>
             <h3 className="requirement-fulfiller">5GB (SSD Recommended)</h3>
           </div>
           <div className="requirement-listing">
