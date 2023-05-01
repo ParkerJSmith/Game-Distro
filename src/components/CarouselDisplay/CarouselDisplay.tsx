@@ -17,49 +17,36 @@ class DoubleLinkedListNode {
 
 export default function CarouselDisplay() {
   const [hoveredGame, setHoveredGame] = useState(-1);
-  const [currentNode, setCurrentNode] = useState(new DoubleLinkedListNode(getGameFullImage(0)));
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  const [currentNode, setCurrentNode] = useState(
+    new DoubleLinkedListNode(getGameFullImage(0))
+  );
   const [movingState, setMovingState] = useState("");
 
   const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
   useEffect(() => {
-    document.getElementById("carousel-left-block")!.style.left =
-      "calc(-30vw + " +
-      document.getElementById("left-carousel-button")!.offsetWidth +
-      "px)";
-    document.getElementById("carousel-games-list-container")!.style.left =
-      "-" +
-      (window.innerWidth -
-        document.getElementById("content-container")!.offsetWidth) /
-        2 +
-      "px";
-    const resize = setTimeout(() => {
-      document.getElementById("carousel-games-list")!.style.marginLeft =
-        "-" +
-        document.getElementById("carousel-games-list")!.offsetWidth / 2 +
-        "px";
-      console.log(windowSize);
-    }, 200);
-
-    return () => clearTimeout(resize);
-  }, [windowSize]);
-
-  useEffect(() => {
     function handleResize() {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+      document.getElementById("carousel-left-block")!.style.left =
+        "calc(-30vw + " +
+        document.getElementById("left-carousel-button")!.offsetWidth +
+        "px)";
+      document.getElementById("carousel-games-list-container")!.style.left =
+        "-" +
+        (window.innerWidth -
+          document.getElementById("content-container")!.offsetWidth) /
+          2 +
+        "px";
+      const resize = setTimeout(() => {
+        document.getElementById("carousel-games-list")!.style.marginLeft =
+          "-" +
+          document.getElementById("carousel-games-list")!.offsetWidth / 2 +
+          "px";
+      }, 200);
+
+      return () => clearTimeout(resize);
     }
     handleResize();
-    window.addEventListener(
-      "resize",
-      setWindowSize.bind(null, {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
-    );
+    window.addEventListener("resize", handleResize);
 
     const gamePics = getGameVerticalImages().concat(getGameVerticalImages());
     let firstNode = new DoubleLinkedListNode(gamePics[0]);
